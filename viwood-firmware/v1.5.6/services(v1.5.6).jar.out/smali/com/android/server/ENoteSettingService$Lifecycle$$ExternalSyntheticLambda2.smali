@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/android/server/ENoteSettingService$Lifecycle$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/android/server/ENoteSettingService$Lifecycle;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/android/server/ENoteSettingService$Lifecycle;)V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/server/ENoteSettingService$Lifecycle$$ExternalSyntheticLambda2;->f$0:Lcom/android/server/ENoteSettingService$Lifecycle;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 0
+
+    .line 0
+    iget-object p0, p0, Lcom/android/server/ENoteSettingService$Lifecycle$$ExternalSyntheticLambda2;->f$0:Lcom/android/server/ENoteSettingService$Lifecycle;
+
+    invoke-static {p0}, Lcom/android/server/ENoteSettingService$Lifecycle;->$r8$lambda$34rA0i2EEL6303nuXiqsXSAEA9g(Lcom/android/server/ENoteSettingService$Lifecycle;)V
+
+    return-void
+.end method

@@ -1,0 +1,27 @@
+.class public Lcom/android/server/audio/AudioVolumeGroupHelperBase;
+.super Ljava/lang/Object;
+.source "AudioVolumeGroupHelperBase.java"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getAudioVolumeGroups()Ljava/util/List;
+    .locals 0
+
+    .line 32
+    new-instance p0, Ljava/util/ArrayList;
+
+    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object p0
+.end method

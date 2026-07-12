@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl$$ExternalSyntheticLambda0;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl;)V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl$$ExternalSyntheticLambda0;->f$0:Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 0
+
+    .line 0
+    iget-object p0, p0, Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl$$ExternalSyntheticLambda0;->f$0:Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl;
+
+    invoke-static {p0}, Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl;->$r8$lambda$3Vn1a0UnpL82m5KgccGkQpUkGRw(Lcom/android/server/ENotePopWindowManagerService$LocalServiceImpl;)V
+
+    return-void
+.end method

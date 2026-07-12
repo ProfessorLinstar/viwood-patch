@@ -1,0 +1,184 @@
+.class public abstract Lcom/android/server/location/injector/LocationPermissionsHelper;
+.super Ljava/lang/Object;
+.source "LocationPermissionsHelper.java"
+
+
+# instance fields
+.field public final mAppOps:Lcom/android/server/location/injector/AppOpsHelper;
+
+.field public final mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+
+# direct methods
+.method public static synthetic $r8$lambda$WoTjr4sbCqNtECb33nGPjU7MTXA(Lcom/android/server/location/injector/LocationPermissionsHelper;Ljava/lang/String;)V
+    .locals 0
+
+    .line 0
+    invoke-virtual {p0, p1}, Lcom/android/server/location/injector/LocationPermissionsHelper;->onAppOpsChanged(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/android/server/location/injector/AppOpsHelper;)V
+    .locals 1
+
+    .line 54
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 55
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    .line 56
+    iput-object p1, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mAppOps:Lcom/android/server/location/injector/AppOpsHelper;
+
+    .line 58
+    new-instance v0, Lcom/android/server/location/injector/LocationPermissionsHelper$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p0}, Lcom/android/server/location/injector/LocationPermissionsHelper$$ExternalSyntheticLambda0;-><init>(Lcom/android/server/location/injector/LocationPermissionsHelper;)V
+
+    invoke-virtual {p1, v0}, Lcom/android/server/location/injector/AppOpsHelper;->addListener(Lcom/android/server/location/injector/AppOpsHelper$LocationAppOpListener;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final addListener(Lcom/android/server/location/injector/LocationPermissionsHelper$LocationPermissionsListener;)V
+    .locals 0
+
+    .line 81
+    iget-object p0, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final hasLocationPermissions(ILandroid/location/util/identity/CallerIdentity;)Z
+    .locals 2
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    return v0
+
+    .line 101
+    :cond_0
+    invoke-static {p1}, Lcom/android/server/location/LocationPermissions;->asPermission(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1, p2}, Lcom/android/server/location/injector/LocationPermissionsHelper;->hasPermission(Ljava/lang/String;Landroid/location/util/identity/CallerIdentity;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    return v0
+
+    .line 105
+    :cond_1
+    iget-object p0, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mAppOps:Lcom/android/server/location/injector/AppOpsHelper;
+
+    invoke-static {p1}, Lcom/android/server/location/LocationPermissions;->asAppOp(I)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/location/injector/AppOpsHelper;->checkOpNoThrow(ILandroid/location/util/identity/CallerIdentity;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public abstract hasPermission(Ljava/lang/String;Landroid/location/util/identity/CallerIdentity;)Z
+.end method
+
+.method public final notifyLocationPermissionsChanged(I)V
+    .locals 1
+
+    .line 68
+    iget-object p0, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/server/location/injector/LocationPermissionsHelper$LocationPermissionsListener;
+
+    .line 69
+    invoke-interface {v0, p1}, Lcom/android/server/location/injector/LocationPermissionsHelper$LocationPermissionsListener;->onLocationPermissionsChanged(I)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final notifyLocationPermissionsChanged(Ljava/lang/String;)V
+    .locals 1
+
+    .line 62
+    iget-object p0, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/server/location/injector/LocationPermissionsHelper$LocationPermissionsListener;
+
+    .line 63
+    invoke-interface {v0, p1}, Lcom/android/server/location/injector/LocationPermissionsHelper$LocationPermissionsListener;->onLocationPermissionsChanged(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onAppOpsChanged(Ljava/lang/String;)V
+    .locals 0
+
+    .line 74
+    invoke-virtual {p0, p1}, Lcom/android/server/location/injector/LocationPermissionsHelper;->notifyLocationPermissionsChanged(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final removeListener(Lcom/android/server/location/injector/LocationPermissionsHelper$LocationPermissionsListener;)V
+    .locals 0
+
+    .line 88
+    iget-object p0, p0, Lcom/android/server/location/injector/LocationPermissionsHelper;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+
+    return-void
+.end method

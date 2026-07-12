@@ -1,0 +1,71 @@
+.class public final Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings$DisplayWhiteBalanceSettingsHandler;
+.super Landroid/os/Handler;
+.source "DisplayWhiteBalanceSettings.java"
+
+
+# instance fields
+.field public final synthetic this$0:Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;
+
+
+# direct methods
+.method public constructor <init>(Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;Landroid/os/Looper;)V
+    .locals 1
+
+    .line 179
+    iput-object p1, p0, Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings$DisplayWhiteBalanceSettingsHandler;->this$0:Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;
+
+    const/4 p1, 0x0
+
+    const/4 v0, 0x1
+
+    .line 180
+    invoke-direct {p0, p2, p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 2
+
+    .line 185
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_0
+
+    return-void
+
+    .line 187
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings$DisplayWhiteBalanceSettingsHandler;->this$0:Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;
+
+    iget p1, p1, Landroid/os/Message;->arg1:I
+
+    if-eqz p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v0, v1}, Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;->-$$Nest$msetActive(Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;Z)V
+
+    .line 188
+    iget-object p0, p0, Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings$DisplayWhiteBalanceSettingsHandler;->this$0:Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;
+
+    invoke-static {p0}, Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;->-$$Nest$fgetmCdsi(Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;)Lcom/android/server/display/color/ColorDisplayService$ColorDisplayServiceInternal;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/android/server/display/color/ColorDisplayService$ColorDisplayServiceInternal;->isDisplayWhiteBalanceEnabled()Z
+
+    move-result p1
+
+    invoke-static {p0, p1}, Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;->-$$Nest$msetEnabled(Lcom/android/server/display/whitebalance/DisplayWhiteBalanceSettings;Z)V
+
+    return-void
+.end method

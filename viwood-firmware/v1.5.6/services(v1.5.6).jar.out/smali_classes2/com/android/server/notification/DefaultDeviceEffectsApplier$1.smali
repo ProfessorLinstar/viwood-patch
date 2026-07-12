@@ -1,0 +1,42 @@
+.class public Lcom/android/server/notification/DefaultDeviceEffectsApplier$1;
+.super Landroid/content/BroadcastReceiver;
+.source "DefaultDeviceEffectsApplier.java"
+
+
+# instance fields
+.field public final synthetic this$0:Lcom/android/server/notification/DefaultDeviceEffectsApplier;
+
+
+# direct methods
+.method public constructor <init>(Lcom/android/server/notification/DefaultDeviceEffectsApplier;)V
+    .locals 0
+
+    .line 171
+    iput-object p1, p0, Lcom/android/server/notification/DefaultDeviceEffectsApplier$1;->this$0:Lcom/android/server/notification/DefaultDeviceEffectsApplier;
+
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 0
+
+    .line 174
+    iget-object p1, p0, Lcom/android/server/notification/DefaultDeviceEffectsApplier$1;->this$0:Lcom/android/server/notification/DefaultDeviceEffectsApplier;
+
+    invoke-static {p1}, Lcom/android/server/notification/DefaultDeviceEffectsApplier;->-$$Nest$munregisterScreenOffReceiver(Lcom/android/server/notification/DefaultDeviceEffectsApplier;)V
+
+    .line 175
+    iget-object p0, p0, Lcom/android/server/notification/DefaultDeviceEffectsApplier$1;->this$0:Lcom/android/server/notification/DefaultDeviceEffectsApplier;
+
+    invoke-static {p0}, Lcom/android/server/notification/DefaultDeviceEffectsApplier;->-$$Nest$fgetmPendingNightMode(Lcom/android/server/notification/DefaultDeviceEffectsApplier;)Z
+
+    move-result p1
+
+    invoke-static {p0, p1}, Lcom/android/server/notification/DefaultDeviceEffectsApplier;->-$$Nest$mupdateNightModeImmediately(Lcom/android/server/notification/DefaultDeviceEffectsApplier;Z)V
+
+    return-void
+.end method
