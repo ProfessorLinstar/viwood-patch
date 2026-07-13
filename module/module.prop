@@ -1,0 +1,6 @@
+id=viwoods_notification_unlocker
+name=Viwoods Notification Unlocker
+version=v1.4.0
+versionCode=140
+author=Mag!c
+description=Disables the notification whitelist on Viwoods AiPaper (Firmware 1.4.0). Built with Claude.

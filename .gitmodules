@@ -1,0 +1,3 @@
+[submodule "external/Viwoods-Notification-Unlocker"]
+	path = external/Viwoods-Notification-Unlocker
+	url = https://github.com/magcrider/Viwoods-Notification-Unlocker.git
