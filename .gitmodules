@@ -1,3 +1,6 @@
 [submodule "external/Viwoods-Notification-Unlocker"]
 	path = external/Viwoods-Notification-Unlocker
 	url = https://github.com/magcrider/Viwoods-Notification-Unlocker.git
+[submodule "external/mtkclient"]
+	path = external/mtkclient
+	url = https://github.com/bkerler/mtkclient.git
