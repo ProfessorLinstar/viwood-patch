@@ -23,5 +23,9 @@ pm list packages | cut -d: -f2 | while read -r pkg; do
   cmd appops set "$pkg" RUN_ANY_IN_BACKGROUND allow 2>/dev/null
 done
 
+# Disable Viwoods settings settings services
+pm disable com.viwoods.settings/com.wisky.libupgrade.downloader.DownLoadService3
+pm disable com.viwoods.settings/com.wisky.modulesettingmain.service.SettingOtherService
+
 log "Battery optimization bypass applied to all packages"
 log "Done"
